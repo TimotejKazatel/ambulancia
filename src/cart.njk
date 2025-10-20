@@ -1,0 +1,34 @@
+---
+layout: layout.njk
+title: Košík
+---
+
+<section class="container">
+  <h2>Váš košík</h2>
+  <div id="cartItems"></div>
+  <form id="orderForm">
+    <input type="text" name="meno" placeholder="Meno a priezvisko" required><br>
+    <input type="email" name="email" placeholder="Email" required><br>
+    <button class="btn" type="submit">Odoslať objednávku</button>
+  </form>
+</section>
+
+<script>
+const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+document.getElementById('cartItems').innerHTML = 
+  cart.map(p => `<p>${p.name} — ${p.price} €</p>`).join('') ||
+  '<p>Košík je prázdny</p>';
+
+document.getElementById('orderForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const data = Object.fromEntries(new FormData(e.target));
+  data.cart = cart;
+  await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify(data)
+  });
+  alert('Objednávka odoslaná! Ozveme sa emailom.');
+  localStorage.removeItem('cart');
+});
+</script>
