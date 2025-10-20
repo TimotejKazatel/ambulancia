@@ -1,0 +1,16 @@
+[
+  {
+    "id": "bylinkovy-caj",
+    "name": "Bylinkový čaj pre deti",
+    "price": 6.90,
+    "img": "/media/caj.jpg",
+    "stock": 8
+  },
+  {
+    "id": "sirup",
+    "name": "Prírodný sirup proti kašľu",
+    "price": 9.50,
+    "img": "/media/sirup.jpg",
+    "stock": 5
+  }
+]
