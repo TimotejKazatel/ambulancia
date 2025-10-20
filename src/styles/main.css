@@ -1,24 +1,53 @@
-body {
-  font-family: 'Inter', sans-serif;
-  background-color: #f8f9fa;
-  color: #222;
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
+/* Základ */
+:root {
+  --line:#e6e8ee; --accent:#3b82f6;
+}
+.container {max-width:1120px;margin:0 auto;padding:0 16px;}
+.nav {display:flex;align-items:center;justify-content:space-between;padding:12px 0;gap:12px;}
+nav {display:flex;gap:14px;align-items:center;}
+
+/* Typografia */
+h1,h2,h3 {line-height:1.2;margin:0 0 .6rem;}
+h2 {font-size:clamp(24px,6vw,56px);}
+p {margin:.6rem 0 1rem;}
+
+/* Tlačidlá – väčšie tap targety */
+.btn {padding:12px 18px;border-radius:12px;font-weight:700;}
+
+/* Grid utilita zo šablóny */
+.grid {display:grid;grid-template-columns:repeat(12,1fr);gap:18px;}
+.cols-2 {grid-column:span 12;}
+@media (min-width:900px){ .cols-2{grid-column:span 6;} }
+
+/* HERO odsadenie na mobiloch */
+main section {padding:28px 0;}
+@media (min-width:900px){ main section {padding:42px 0;} }
+
+/* Mobilné menu */
+@media (max-width:900px){
+  nav#siteNav {
+    position: absolute;
+    right: 16px;
+    top: 64px;
+    background: #fff;
+    border:1px solid var(--line);
+    border-radius:12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.06);
+    padding:10px;
+    width: min(88vw, 340px);
+    display:none;
+    flex-direction: column;
+    gap:8px;
+  }
+  nav#siteNav a {padding:10px;border-radius:10px;display:block;}
 }
 
-header {
-  background: #4da6ff;
-  color: white;
-  padding: 1.5rem;
-  text-align: center;
+/* Desktop nav hover */
+@media (min-width:901px){
+  nav a {padding:8px 10px;border-radius:10px;}
+  nav a:hover {background:#eef2ff;}
 }
 
-main {
-  padding: 2rem;
-  max-width: 900px;
-  margin: auto;
-}
 
 a {
   color: #0077cc;
