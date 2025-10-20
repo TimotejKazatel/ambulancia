@@ -1,3 +1,4 @@
+eleventyConfig.addGlobalData("products", () => require("./src/data/products.json"));
 
 module.exports = function(eleventyConfig) {
   // statické súbory
