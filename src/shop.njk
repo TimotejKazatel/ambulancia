@@ -1,11 +1,32 @@
 ---
 layout: layout.njk
-title: E‑shop s bylinkami
+title: E-shop
 ---
-<section><div class="container">
-<h2>E‑shop s bylinkami</h2>
-<p>Použi Ecwid (free plan). Vymeň <code>ECWID_STORE_ID</code> za tvoje ID.</p>
-<div id="my-store-ecwid"></div>
-<script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?ECWID_STORE_ID" async></script>
-<script type="text/javascript"> xProductBrowser("categoriesPerRow=3","views=grid(20,3)","categoryView=grid","searchView=list","id=my-store-ecwid"); </script>
-</div></section>
+
+<section class="container">
+  <h2>Naše produkty</h2>
+  <div class="grid">
+    {% for product in products %}
+      <div class="card cols-2">
+        <img src="{{ product.img }}" alt="{{ product.name }}">
+        <h3>{{ product.name }}</h3>
+        <p><strong>{{ product.price | round(2) }} €</strong></p>
+        {% if product.stock > 0 %}
+          <button class="btn" onclick="addToCart('{{ product.id }}')">Objednať</button>
+        {% else %}
+          <span style="color:#999">Vypredané</span>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+<script>
+const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+function addToCart(id){
+  const p = {{ products | safe }}.find(x => x.id === id);
+  cart.push(p);
+  localStorage.setItem('cart', JSON.stringify(cart));
+  alert(`${p.name} bol pridaný do košíka`);
+}
+</script>
