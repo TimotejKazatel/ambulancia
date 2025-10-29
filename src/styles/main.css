@@ -56,3 +56,48 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+/* Hero sekcia */
+.hero { padding: 60px 0; }
+.hero .breadcrumbs { color: var(--muted); font-size: 0.9rem; margin-bottom: 12px; }
+.hero-wrap { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 28px; align-items: center; }
+.hero h1 { font-size: clamp(1.8rem, 3vw, 2.6rem); line-height: 1.1; margin-bottom: 12px; }
+.hero p.lead { color: var(--muted); font-size: 1.1rem; }
+.hero .media { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); background: var(--card); }
+.hero img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Karty */
+.card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow); }
+.card h2, .card h3 { margin-top: 0; }
+.card--full { grid-column: 1 / -1; }
+
+/* Grid */
+.grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; }
+@media (max-width: 860px) { .grid { grid-template-columns: 1fr; } }
+
+/* CTA tlačidlá */
+.cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
+.btn { background: var(--accent); color: #fff; border: none; border-radius: 12px; padding: 12px 18px; font-weight: 600; }
+.btn--ghost { background: transparent; border: 1px solid var(--accent); color: var(--accent); }
+
+/* Tím */
+.team { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+.person { grid-column: span 4; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+.person img { width: 100%; height: 220px; object-fit: cover; }
+.person .info { padding: 16px; }
+.person .role { color: var(--muted); font-size: .95rem; }
+
+/* Tabuľka hodín */
+table.hours { width: 100%; border-collapse: collapse; }
+.hours th, .hours td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+.hours th { color: var(--muted); font-weight: 600; }
+
+/* Časová os */
+.timeline { position: relative; padding-left: 22px; }
+.timeline::before { content: ""; position: absolute; left: 8px; top: 6px; bottom: 6px; width: 2px; background: var(--accent); opacity: .3; }
+.tl-item { position: relative; margin: 12px 0 0; }
+.tl-item::before { content: ""; position: absolute; left: -2px; top: .45rem; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
+
+/* Pomocné farby */
+.note { color: var(--muted); font-size: .9rem; }
+.stat { display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: #f3f4f6; border-radius: 10px; font-weight: 500; }
