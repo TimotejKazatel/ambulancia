@@ -209,3 +209,22 @@ nav#siteNav{ z-index:1100; }
     font-size: 1.15rem;
   }
 }
+
+/* Desktop: 3 stĺpce pre sekciu Čo robíme */
+#o-nas [aria-labelledby="sluzby"] .grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+/* Mobil: 1 stĺpec — prepíše všetko, aj keby ostali inline štýly */
+@media (max-width:900px){
+  #o-nas [aria-labelledby="sluzby"] .grid{
+    grid-template-columns:1fr !important;
+  }
+  #o-nas [aria-labelledby="sluzby"] .grid > *{
+    grid-column:1 / -1 !important;
+  }
+  .hero .cta{flex-direction:column;gap:10px;}
+  .hero .cta .btn{width:100%;text-align:center;}
+}
