@@ -180,8 +180,10 @@ nav#siteNav {
 }
 
 body {
-  background-color: #f9fafb;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpath fill='%23dbeafe' fill-opacity='0.3' d='M60 0C93.137 0 120 26.863 120 60S93.137 120 60 120 0 93.137 0 60 26.863 0 60 0z'/%3E%3C/svg%3E");
-  background-repeat: repeat;
-  background-size: 240px 240px;
+  background-image: url("/assets/.jpg");
+  background-size: cover;         /* alebo contain, ak nechceš roztiahnuť */
+  background-position: center;    /* nech je pekne v strede */
+  background-repeat: no-repeat;   /* aby sa neopakoval */
+  background-attachment: fixed;   /* nech sa nehýbe pri scrollovaní */
 }
+
