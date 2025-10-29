@@ -6,234 +6,80 @@ eleventyNavigation:
   order: 2
 ---
 
-<header class="hero o-nas-hero">
+<header class="hero">
   <div class="container">
     <nav class="breadcrumbs"><a href="/">Domov</a> / O nás</nav>
     <div class="hero-wrap">
       <div>
-        <h1>O nás – [Názov ambulancie]</h1>
-        <p class="lead">Poskytujeme modernú, dostupnú a empatickú zdravotnú starostlivosť pre dospelých aj deti. Kombinujeme skúsenosti, technológiu a ľudský prístup – s dôrazom na prevenciu a rýchle objednanie.</p>
-        <div class="cta">
-          <a class="btn" href="/kontakt">Objednať termín</a>
-          <a class="btn btn--ghost" href="/sluzby">Naše služby</a>
-        </div>
+        <h1>O nás</h1>
+        <p class="lead">Ambulancia všeobecného lekára pre deti a dorast v Lietavskej Lúčke.</p>
       </div>
       <div class="media">
-        <img src="/assets/img/ambulancia-hero.jpg" alt="Ambulancia [Názov] – recepcia a vyšetrovňa">
+        <img src="/assets/img/ambulancia-hero.jpg" alt="Ambulancia – recepcia a vyšetrovňa">
       </div>
     </div>
   </div>
 </header>
 
 <main id="o-nas" class="container">
-  <!-- Misia + prečo my -->
-  <section class="grid">
-    <article class="card" style="grid-column: span 7;">
-      <h2 id="misia">Naša misia</h2>
-      <p>Byť prvou voľbou pre pacientov, ktorí hľadajú odbornú starostlivosť bez zbytočného stresu. Zameriavame sa na <strong>preventívne prehliadky</strong>, <strong>presnú diagnostiku</strong> a <strong>jasnú komunikáciu</strong>.</p>
-      <ul>
-        <li>Krátke čakacie doby a objednávanie online</li>
-        <li>Jasné vysvetlenie nálezov a liečby</li>
-        <li>Prepojenie s laboratóriami a poisťovňami</li>
-      </ul>
-    </article>
 
-    <aside class="card" style="grid-column: span 5;">
-      <h3>Prečo si vybrať nás</h3>
-      <div class="stat"><strong>4.9/5</strong> hodnotenie pacientov (interné)</div>
-      <div class="stat"><strong>48 hodín</strong> priemerný čas do najbližšieho voľného termínu</div>
-      <div class="stat"><strong>[3]</strong> zmluvné poisťovne: VšZP, Dôvera, Union</div>
-    </aside>
-  </section>
-
- <section class="card card--full">
-  <h2 id="sluzby">Čo robíme</h2>
-
-  <div class="services">
-    <!-- veľká karta (mení sa podľa kliknutej položky) -->
-    <article class="services-main card" id="serviceDetail">
-      <h3>Preventívna starostlivosť</h3>
-      <p>Prehliadky, skríningy a očkovania podľa aktuálnych odporúčaní.</p>
-    </article>
-
-    <!-- malé karty (prepínajú obsah veľkej) -->
-    <div class="services-list" role="list">
-      <button class="s-item card is-active" role="listitem"
-              data-title="Preventívna starostlivosť"
-              data-text="Prehliadky, skríningy a očkovania podľa aktuálnych odporúčaní.">
-        Preventívna starostlivosť
-      </button>
-
-      <button class="s-item card" role="listitem"
-              data-title="Diagnostika"
-              data-text="EKG, USG [ak máte], odbery a spolupráca s akreditovanými laboratóriami.">
-        Diagnostika
-      </button>
-
-      <button class="s-item card" role="listitem"
-              data-title="Liečba & sledovanie"
-              data-text="Individuálne liečebné plány a bezpečné predpisovanie liekov.">
-        Liečba & sledovanie
-      </button>
-
-      <button class="s-item card" role="listitem"
-              data-title="Poradenstvo"
-              data-text="Preventívne a nutričné konzultácie, interpretácia výsledkov.">
-        Poradenstvo
-      </button>
-
-      <button class="s-item card" role="listitem"
-              data-title="Očkovanie"
-              data-text="Povinné aj odporúčané vakcíny, kontrola očkovacieho kalendára.">
-        Očkovanie
-      </button>
-    </div>
-  </div>
-</section>
-
-<script>
-  // prepínanie obsahu veľkej karty
-  (function(){
-    const detail = document.getElementById('serviceDetail');
-    const items = document.querySelectorAll('.s-item');
-    items.forEach(btn=>{
-      btn.addEventListener('click', ()=>{
-        items.forEach(b=>b.classList.remove('is-active'));
-        btn.classList.add('is-active');
-        const title = btn.getAttribute('data-title');
-        const text  = btn.getAttribute('data-text');
-        detail.innerHTML = `<h3>${title}</h3><p>${text}</p>`;
-        // posun na veľkú kartu na mobile
-        if (window.matchMedia('(max-width:900px)').matches) {
-          detail.scrollIntoView({behavior:'smooth', block:'start'});
-        }
-      });
-    });
-  })();
-</script>
-
-
-  <!-- Tím -->
+  <!-- Lekárka -->
   <section class="card card--full">
-    <h2 id="tim">Náš tím</h2>
-    <div class="team" role="list">
-      <article class="person" role="listitem">
-        <img src="/assets/img/team-lekar.jpg" alt="MUDr. [Meno Priezvisko] – odborný lekár">
-        <div class="info">
-          <h3>MUDr. [Meno Priezvisko]</h3>
-          <div class="role">Odborný lekár, 12+ rokov praxe</div>
-          <p>Špecializácia na [oblasť], člen Slovenskej lekárskej komory. Dôraz na jasnú komunikáciu a prevenciu.</p>
-        </div>
-      </article>
-      <article class="person" role="listitem">
-        <img src="/assets/img/team-sestra.jpg" alt="[Meno Priezvisko] – zdravotná sestra">
-        <div class="info">
-          <h3>[Meno Priezvisko]</h3>
-          <div class="role">Zdravotná sestra</div>
-          <p>Koordinuje objednávanie, odbery a prípravu pacientov na vyšetrenie.</p>
-        </div>
-      </article>
-      <article class="person" role="listitem">
-        <img src="/assets/img/team-koordinator.jpg" alt="[Meno Priezvisko] – koordinátor/ka ambulancie">
-        <div class="info">
-          <h3>[Meno Priezvisko]</h3>
-          <div class="role">Koordinátor/ka ambulancie</div>
-          <p>Starostlivosť o plynulý chod ambulancie a komunikáciu s poisťovňami.</p>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- Hodiny + kontakt -->
-  <section class="grid">
-    <article class="card" style="grid-column: span 6;">
-      <h2 id="hodiny">Ordinačné hodiny</h2>
-      <table class="hours">
-        <thead><tr><th>Deň</th><th>Čas</th></tr></thead>
-        <tbody>
-          <tr><td>Pon – Uto</td><td>07:30 – 15:30</td></tr>
-          <tr><td>Str – Štv</td><td>09:00 – 17:00</td></tr>
-          <tr><td>Pia</td><td>07:30 – 13:00</td></tr>
-        </tbody>
-      </table>
-      <p class="note">Posledné objednanie na odbery 30 minút pred koncom ordinačných hodín.</p>
-    </article>
-
-    <aside class="card" style="grid-column: span 6;">
-      <h2 id="kontakt">Kontakt</h2>
-      <p><strong>Adresa:</strong> [Ulica 123, Mesto] • <strong>Telefón:</strong> <a href="tel:+421xxxxxxx">+421 xxx xxx xxx</a> • <strong>Email:</strong> <a href="mailto:info@ambulancia.sk">info@ambulancia.sk</a></p>
-      <div class="cta">
-        <a class="btn" href="/kontakt">Objednať online</a>
-        <a class="btn btn--ghost" href="/kontakt">Navigovať</a>
+    <h2>Lekárka — MUDr. Alena Jjjjjj</h2>
+    <div class="grid">
+      <div class="card cols-2">
+        <p>Som absolventka LFUK v Bratislave. Počas moje odbornej lekárskej praxe som pracovala na Detskom lôžkovom oddelení v Skalici, neskôr v Žiline. Postupne som získavala skúsenosti na oddelení dojčiat a väčších detí, na novorodeneckom oddelení i na JIS detského oddelenia. Mám absolvovanú atestáciu v odbore pediatria. Absolvovala som kurz Bach international Education Programme I, II. stupeň. Od 1.1.2015 vediem Ambulanciu Všeobecného lekára pre deti a dorast v Lietavskej Lúčke.</p>
       </div>
-    </aside>
-  </section>
-
-  <!-- História / míľniky -->
-  <section class="card card--full">
-    <h2 id="historia">Naša cesta</h2>
-    <div class="timeline">
-      <div class="tl-item">
-        <h3>20XX – Založenie ambulancie</h3>
-        <p class="note">Otvorenie v lokalite [Mesto], zameranie na primárnu starostlivosť.</p>
-      </div>
-      <div class="tl-item">
-        <h3>20XX – Nové prístroje</h3>
-        <p class="note">Rozšírenie diagnostiky: EKG, USG [ak máte].</p>
-      </div>
-      <div class="tl-item">
-        <h3>20XX – Online objednávanie</h3>
-        <p class="note">Zavedenie elektronického objednávania a SMS pripomienok.</p>
+      <div class="card cols-2">
+        <img src="/assets/img/team-lekar.jpg" alt="MUDr. Alena Jjjjjj" />
       </div>
     </div>
   </section>
 
-  <!-- Poisťovne + prístupnosť -->
-  <section class="grid">
-    <article class="card" style="grid-column: span 7;">
-      <h2 id="poistovne">Zmluvné poisťovne & certifikáty</h2>
-      <p class="note">Sme zmluvným partnerom poisťovní <strong>VšZP</strong>, <strong>Dôvera</strong> a <strong>Union</strong>. Certifikáty: ISO 9001 [ak máte].</p>
-      <p class="note">Sem vlož logá poisťovní s alt textom kvôli prístupnosti.</p>
-    </article>
-    <aside class="card" style="grid-column: span 5;">
-      <h2>Dostupnosť a prístupnosť</h2>
-      <ul>
-        <li>Bezbariérový vstup a toaleta</li>
-        <li>Možnosť doprovodu</li>
-        <li>Parkovanie v areáli</li>
-      </ul>
-    </aside>
-  </section>
-
-  <!-- Mapa -->
+  <!-- Sestrička -->
   <section class="card card--full">
-    <h2 id="mapa">Kde nás nájdete</h2>
-    <div class="media" style="height: 340px;">
-      <!-- Nahraď vlastným embedom (Google Maps / OpenStreetMap) -->
-      <img src="/assets/img/mapa-placeholder.jpg" alt="Mapa s umiestnením ambulancie v meste [Mesto]">
+    <h2>Sestrička — Zuzana Mmmmm</h2>
+    <div class="grid">
+      <div class="card cols-2">
+        <p>Som absolventkou SZŠ v Žiline v odbore detská sestra. Následne som si doplnila špecializačnú skúšku v odbore interné lekárstvo. Najskôr som pracovala v Domove sociálnych služieb v Harmónii v Žiline. Od 1.9.2017 pracujem na Ambulancii všeobecného lekára pre deti a dorast v Lietavskej Lúčke.</p>
+      </div>
+      <div class="card cols-2">
+        <img src="/assets/img/team-sestra.jpg" alt="Zuzana Mmmmm — zdravotná sestra" />
+      </div>
     </div>
   </section>
 
-  <!-- GDPR -->
+  <!-- Čo ponúkame -->
   <section class="card card--full">
-    <h2 id="gdpr">Ochrana údajov</h2>
-    <p class="note">Spracúvame osobné údaje v súlade s GDPR. Dokument „Zásady spracúvania osobných údajov“ nájdete <a href="/gdpr">tu</a>. Komunikácia webu je zabezpečená šifrovaním (HTTPS).</p>
+    <h2>Čo ponúkame</h2>
+    <ul>
+      <li>deťom a rodičom priateľské prostredie</li>
+      <li>vlastnú čakáreň s priestorom na hranie a ambulanciu s detským kútikom</li>
+      <li>objednávanie pacienta na presný čas vyšetrenia</li>
+      <li>oznamovanie laboratórnych výsledkov vyšetrení lekárom telefonicky, formou SMS správ</li>
+      <li>konzultácie osobne ale i telefonicky a prostredníctvom SMS, MMS</li>
+      <li>CRP vyšetrenie zadarmo priamo v ambulancii – vyšetrenie, pomocou ktorého určíme, či je potrebná antibiotická liečba</li>
+      <li>zapožičanie chambra – pomôcky potrebnej k používaniu niektorých inhalačných liekov</li>
+      <li>zapožičanie dojčenskej váhy pri problémoch s kŕmením</li>
+      <li>parkovanie je možné pri zdravotnom stredisku zadarmo</li>
+    </ul>
   </section>
+
+  <!-- Obvod ambulancie -->
+  <section class="card card--full">
+    <h2>Do nášho obvodu patria obce</h2>
+    <p>Lietavská Lúčka, Turie, Porúbka, Lietavská Svinná – Babkov.</p>
+  </section>
+
+  <!-- Prijímame nových pacientov -->
+  <section class="card card--full">
+    <h2>Nové deti prijímame</h2>
+    <ul>
+      <li>ak majú trvalé bydlisko v našom obvode</li>
+      <li>ak menia lekára z dôvodu zmeny trvalého bydliska</li>
+      <li>ak majú u nás blízkych príbuzných</li>
+    </ul>
+    <p><strong>Novorodencov prijímame bez ohľadu na miesto trvalého bydliska</strong> – t. j. aj z iných oblastí.</p>
+  </section>
+
 </main>
-
-<!-- Štruktúrované dáta -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "MedicalClinic",
-  "name": "Ambulancia [Názov]",
-  "medicalSpecialty": "[Špecializácia]",
-  "address": {"@type": "PostalAddress","streetAddress": "[Ulica 123]","addressLocality": "[Mesto]","postalCode": "[PSČ]","addressCountry": "SK"},
-  "telephone": "+421 xxx xxx xxx",
-  "email": "info@ambulancia.sk",
-  "openingHours": ["Mo-Tu 07:30-15:30","We-Th 09:00-17:00","Fr 07:30-13:00"],
-  "url": "https://[vas-web].sk/o-nas",
-  "image": ["https://[vas-web].sk/assets/img/ambulancia-hero.jpg"],
-  "acceptsInsurance": ["VšZP","Dôvera","Union"]
-}
-</script>
