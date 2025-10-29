@@ -228,3 +228,20 @@ nav#siteNav{ z-index:1100; }
   .hero .cta{flex-direction:column;gap:10px;}
   .hero .cta .btn{width:100%;text-align:center;}
 }
+/* Čo robíme – grid viaže sa na h2#sluzby + .grid */
+h2#sluzby + .grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap:18px;
+}
+
+/* Mobil: vždy 1 stĺpec */
+@media (max-width:900px){
+  h2#sluzby + .grid{
+    grid-template-columns: 1fr !important;
+  }
+  h2#sluzby + .grid > *{
+    grid-column: 1 / -1 !important;
+  }
+  .card h3{ font-size:1.15rem; word-break:break-word; }
+}
