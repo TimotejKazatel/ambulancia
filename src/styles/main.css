@@ -101,3 +101,27 @@ table.hours { width: 100%; border-collapse: collapse; }
 /* Pomocné farby */
 .note { color: var(--muted); font-size: .9rem; }
 .stat { display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: #f3f4f6; border-radius: 10px; font-weight: 500; }
+
+
+/* --- Mobilné úpravy pre O nás --- */
+@media (max-width: 900px){
+  /* Hero na 1 stĺpec, tlačidlá pod seba */
+  .hero-wrap{ grid-template-columns: 1fr; gap:16px; }
+  .cta{ flex-direction: column; align-items: stretch; }
+  .btn, .btn--ghost{ width: 100%; text-align: center; }
+
+  /* Karty a položky v grid-e cez celú šírku */
+  .card{ grid-column: 1 / -1; }
+  .team .person{ grid-column: 1 / -1; }
+  [role="list"] > .card{ grid-column: 1 / -1; }
+
+  /* Menšie nadpisy na mobile, nech sa nelámu divoko */
+  .hero h1{ font-size: clamp(1.6rem, 6vw, 2rem); }
+}
+
+/* --- Oprava mobilného menu na stránke O nás --- */
+header{ position: sticky; top:0; z-index: 1000; }    /* vyššie nad všetkým */
+nav#siteNav{ z-index: 1100; }                        /* panel menu nad obsahom */
+@media (max-width:900px){
+  nav#siteNav{ position: fixed; right:16px; top:64px; }  /* nech nie je prekrytý */
+}
