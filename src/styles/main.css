@@ -125,3 +125,18 @@ nav#siteNav{ z-index: 1100; }                        /* panel menu nad obsahom *
 @media (max-width:900px){
   nav#siteNav{ position: fixed; right:16px; top:64px; }  /* nech nie je prekrytý */
 }
+/* Fix: služby na mobile = 1 stĺpec, aj keď majú inline grid-column */
+@media (max-width: 900px){
+  .grid[role="list"]{ grid-template-columns: 1fr !important; }
+  .grid[role="list"] > *{ grid-column: 1 / -1 !important; }
+  .card h3{ font-size: 1.15rem; }
+  .hero h1{ font-size: clamp(1.6rem, 6vw, 2rem); }
+  .cta{ flex-direction: column; gap: 10px; }
+  .cta .btn{ width: 100%; text-align: center; }
+}
+
+/* Lepšie zalamovanie textu na úzkych displejoch */
+h1,h2,h3,p{ hyphens: auto; overflow-wrap: anywhere; }
+
+/* Obrázok v hero nech sa nepokúša o pevné rozmery */
+.hero .media img{ height: auto; }
