@@ -1,282 +1,111 @@
-/* Základ */
-:root {
-  --line:#e6e8ee; --accent:#3b82f6;
-}
-.container {max-width:1120px;margin:0 auto;padding:0 16px;}
-.nav {display:flex;align-items:center;justify-content:space-between;padding:12px 0;gap:12px;}
-nav {display:flex;gap:14px;align-items:center;}
+/* ===== ZÁKLAD ===== */
+:root { --line:#e6e8ee; --accent:#3b82f6; }
+.container { max-width:1120px; margin:0 auto; padding:0 16px; }
+.nav { display:flex; align-items:center; justify-content:space-between; padding:12px 0; gap:12px; }
+nav { display:flex; gap:14px; align-items:center; }
 
 /* Typografia */
-h1,h2,h3 {line-height:1.2;margin:0 0 .6rem;}
-h2 {font-size:clamp(24px,6vw,56px);}
-p {margin:.6rem 0 1rem;}
+h1,h2,h3 { line-height:1.2; margin:0 0 .6rem; }
+h2 { font-size:clamp(24px,6vw,56px); }
+p { margin:.6rem 0 1rem; }
 
-/* Tlačidlá – väčšie tap targety */
-.btn {padding:12px 18px;border-radius:12px;font-weight:700;}
+/* Odkazy */
+a { color:#0077cc; text-decoration:none; }
+a:hover { text-decoration:underline; }
 
-/* Grid utilita zo šablóny */
-.grid {display:grid;grid-template-columns:repeat(12,1fr);gap:18px;}
-.cols-2 {grid-column:span 12;}
-@media (min-width:900px){ .cols-2{grid-column:span 6;} }
+/* Tlačidlá */
+.btn { background:var(--accent); color:#fff; padding:12px 18px; border-radius:12px; font-weight:700; border:none; }
+.btn--ghost { background:transparent; border:1px solid var(--accent); color:var(--accent); }
 
-/* HERO odsadenie na mobiloch */
-main section {padding:28px 0;}
-@media (min-width:900px){ main section {padding:42px 0;} }
+/* Sekcie */
+main section { padding:28px 0; }
+@media (min-width:900px){ main section { padding:42px 0; } }
 
-/* Mobilné menu */
+/* ===== HERO ===== */
+.hero { padding:60px 0; }
+.hero .breadcrumbs { color:var(--muted); font-size:.9rem; margin-bottom:12px; }
+.hero-wrap { display:grid; grid-template-columns:1.2fr .8fr; gap:28px; align-items:center; }
+.hero h1 { font-size:clamp(1.8rem,3vw,2.6rem); line-height:1.1; margin-bottom:12px; }
+.hero p.lead { color:var(--muted); font-size:1.1rem; }
+.hero .media { border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); background:var(--card); }
+.hero .media img { width:100%; height:auto; object-fit:cover; }
+
+/* Mobil hero */
 @media (max-width:900px){
-  nav#siteNav {
-    position: absolute;
-    right: 16px;
-    top: 64px;
-    background: #fff;
-    border:1px solid var(--line);
-    border-radius:12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,.06);
-    padding:10px;
-    width: min(88vw, 340px);
-    display:none;
-    flex-direction: column;
-    gap:8px;
-  }
-  nav#siteNav a {padding:10px;border-radius:10px;display:block;}
+  .hero-wrap{ grid-template-columns:1fr; gap:16px; }
+  .hero h1{ font-size:1.9rem; line-height:1.15; }
+  .hero p.lead{ font-size:1rem; }
+  .hero .cta{ display:flex; flex-direction:column; gap:10px; }
+  .hero .cta .btn{ width:100%; text-align:center; }
 }
 
-/* Desktop nav hover */
-@media (min-width:901px){
-  nav a {padding:8px 10px;border-radius:10px;}
-  nav a:hover {background:#eef2ff;}
-}
-
-
-a {
-  color: #0077cc;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
-
-/* Hero sekcia */
-.hero { padding: 60px 0; }
-.hero .breadcrumbs { color: var(--muted); font-size: 0.9rem; margin-bottom: 12px; }
-.hero-wrap { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 28px; align-items: center; }
-.hero h1 { font-size: clamp(1.8rem, 3vw, 2.6rem); line-height: 1.1; margin-bottom: 12px; }
-.hero p.lead { color: var(--muted); font-size: 1.1rem; }
-.hero .media { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); background: var(--card); }
-.hero img { width: 100%; height: 100%; object-fit: cover; }
-
-/* Karty */
-.card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow); }
-.card h2, .card h3 { margin-top: 0; }
-.card--full { grid-column: 1 / -1; }
-
-/* Grid */
-.grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; }
-@media (max-width: 860px) { .grid { grid-template-columns: 1fr; } }
-
-/* CTA tlačidlá */
-.cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
-.btn { background: var(--accent); color: #fff; border: none; border-radius: 12px; padding: 12px 18px; font-weight: 600; }
-.btn--ghost { background: transparent; border: 1px solid var(--accent); color: var(--accent); }
+/* ===== KARTY / GRID DOPLNKY ===== */
+.card { background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:20px; box-shadow:var(--shadow); }
+.card--full { grid-column:1 / -1; }
+.note { color:var(--muted); font-size:.9rem; }
+.stat { display:flex; align-items:center; gap:10px; padding:10px 14px; background:#f3f4f6; border-radius:10px; font-weight:500; }
 
 /* Tím */
-.team { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
-.person { grid-column: span 4; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
-.person img { width: 100%; height: 220px; object-fit: cover; }
-.person .info { padding: 16px; }
-.person .role { color: var(--muted); font-size: .95rem; }
+.team { display:grid; grid-template-columns:repeat(12,1fr); gap:16px; }
+.person { grid-column:span 4; background:var(--card); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); }
+.person img { width:100%; height:220px; object-fit:cover; }
+.person .info { padding:16px; }
+.person .role { color:var(--muted); font-size:.95rem; }
+
+@media (max-width:900px){
+  .person{ grid-column:1 / -1; }
+}
 
 /* Tabuľka hodín */
-table.hours { width: 100%; border-collapse: collapse; }
-.hours th, .hours td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); }
-.hours th { color: var(--muted); font-weight: 600; }
+table.hours { width:100%; border-collapse:collapse; }
+.hours th,.hours td { text-align:left; padding:10px 12px; border-bottom:1px solid var(--line); }
+.hours th { color:var(--muted); font-weight:600; }
 
 /* Časová os */
-.timeline { position: relative; padding-left: 22px; }
-.timeline::before { content: ""; position: absolute; left: 8px; top: 6px; bottom: 6px; width: 2px; background: var(--accent); opacity: .3; }
-.tl-item { position: relative; margin: 12px 0 0; }
-.tl-item::before { content: ""; position: absolute; left: -2px; top: .45rem; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
+.timeline { position:relative; padding-left:22px; }
+.timeline::before { content:""; position:absolute; left:8px; top:6px; bottom:6px; width:2px; background:var(--accent); opacity:.3; }
+.tl-item { position:relative; margin:12px 0 0; }
+.tl-item::before { content:""; position:absolute; left:-2px; top:.45rem; width:10px; height:10px; border-radius:50%; background:var(--accent); }
 
-/* Pomocné farby */
-.note { color: var(--muted); font-size: .9rem; }
-.stat { display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: #f3f4f6; border-radius: 10px; font-weight: 500; }
-
-
-/* --- Mobilné úpravy pre O nás --- */
-@media (max-width: 900px){
-  /* Hero na 1 stĺpec, tlačidlá pod seba */
-  .hero-wrap{ grid-template-columns: 1fr; gap:16px; }
-  .cta{ flex-direction: column; align-items: stretch; }
-  .btn, .btn--ghost{ width: 100%; text-align: center; }
-
-  /* Karty a položky v grid-e cez celú šírku */
-  .card{ grid-column: 1 / -1; }
-  .team .person{ grid-column: 1 / -1; }
-  [role="list"] > .card{ grid-column: 1 / -1; }
-
-  /* Menšie nadpisy na mobile, nech sa nelámu divoko */
-  .hero h1{ font-size: clamp(1.6rem, 6vw, 2rem); }
-}
-
-/* --- Oprava mobilného menu na stránke O nás --- */
-header{ position: sticky; top:0; z-index: 1000; }    /* vyššie nad všetkým */
-nav#siteNav{ z-index: 1100; }                        /* panel menu nad obsahom */
-@media (max-width:900px){
-  nav#siteNav{ position: fixed; right:16px; top:64px; }  /* nech nie je prekrytý */
-}
-/* Fix: služby na mobile = 1 stĺpec, aj keď majú inline grid-column */
-@media (max-width: 900px){
-  .grid[role="list"]{ grid-template-columns: 1fr !important; }
-  .grid[role="list"] > *{ grid-column: 1 / -1 !important; }
-  .card h3{ font-size: 1.15rem; }
-  .hero h1{ font-size: clamp(1.6rem, 6vw, 2rem); }
-  .cta{ flex-direction: column; gap: 10px; }
-  .cta .btn{ width: 100%; text-align: center; }
-}
-
-/* Lepšie zalamovanie textu na úzkych displejoch */
-h1,h2,h3,p{ hyphens: auto; overflow-wrap: anywhere; }
-
-/* Obrázok v hero nech sa nepokúša o pevné rozmery */
-.hero .media img{ height: auto; }
-
-/* --- MOBIL FIX: hero a CTA --- */
-@media (max-width: 900px){
-  .hero-wrap{ display:grid; grid-template-columns: 1fr !important; gap:16px; }
-  .hero h1{ font-size: 1.9rem !important; line-height:1.15 !important; }
-  .hero p.lead{ font-size: 1rem !important; }
-  .hero .cta{ display:flex; flex-direction: column !important; gap:10px; }
-  .hero .cta .btn{ width:100% !important; text-align:center; }
-}
-
-/* --- MOBIL FIX: sekcia „Čo robíme“ = 1 stĺpec --- */
-@media (max-width: 900px){
-  .grid[role="list"]{
-    display:grid !important;
-    grid-template-columns: 1fr !important;
-    grid-auto-flow: row !important;
-  }
-  .grid[role="list"] > *{
-    grid-column: 1 / -1 !important;   /* prebijeme inline style="grid-column: span 4" */
-  }
-  .card h3{ font-size: 1.15rem !important; line-height:1.25; word-break: break-word; }
-}
-
-/* lepšie zalamovanie textu na úzkych tel. */
+/* Lepšie zalamovanie textu */
 h1,h2,h3,p{ hyphens:auto; overflow-wrap:anywhere; }
 
-/* --- MENU FIX: aby bolo klikateľné nad obsahom --- */
-header{ position: sticky; top:0; z-index:1000; }
+/* ===== NAV – mobilné menu nad obsahom ===== */
+header{ position:sticky; top:0; z-index:1000; }
 nav#siteNav{ z-index:1100; }
 @media (max-width:900px){
-  nav#siteNav{ position: fixed; right:16px; top:64px; }
+  nav#siteNav{
+    position:fixed; right:16px; top:64px;
+    background:#fff; border:1px solid var(--line); border-radius:12px;
+    box-shadow:0 10px 30px rgba(0,0,0,.06);
+    padding:10px; width:min(88vw,340px);
+    display:none; flex-direction:column; gap:8px;
+  }
+  nav#siteNav a{ padding:10px; border-radius:10px; display:block; }
+}
+@media (min-width:901px){
+  nav a{ padding:8px 10px; border-radius:10px; }
+  nav a:hover{ background:#eef2ff; }
 }
 
-/* --- RESPONSIVE FIX pre sekciu Čo robíme --- */
-
-/* Desktop: 3 stĺpce */
-.grid[role="list"] {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-}
-
-/* Mobil: 1 stĺpec */
-@media (max-width: 900px) {
-  .grid[role="list"] {
-    grid-template-columns: 1fr !important;
-  }
-  .grid[role="list"] > * {
-    grid-column: 1 / -1 !important;
-  }
-
-  /* Tlačidlá a text nech sa nezalamujú divne */
-  .cta {
-    flex-direction: column;
-    gap: 10px;
-  }
-  .cta .btn {
-    width: 100%;
-    text-align: center;
-  }
-
-  /* Nadpisy a text menšie */
-  .hero h1 {
-    font-size: clamp(1.6rem, 6vw, 2rem);
-  }
-  .card h3 {
-    font-size: 1.15rem;
-  }
-}
-
-/* Desktop: 3 stĺpce pre sekciu Čo robíme */
-#o-nas [aria-labelledby="sluzby"] .grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-}
-
-/* Mobil: 1 stĺpec — prepíše všetko, aj keby ostali inline štýly */
-@media (max-width:900px){
-  #o-nas [aria-labelledby="sluzby"] .grid{
-    grid-template-columns:1fr !important;
-  }
-  #o-nas [aria-labelledby="sluzby"] .grid > *{
-    grid-column:1 / -1 !important;
-  }
-  .hero .cta{flex-direction:column;gap:10px;}
-  .hero .cta .btn{width:100%;text-align:center;}
-}
-/* Čo robíme – grid viaže sa na h2#sluzby + .grid */
+/* ===== „ČO ROBÍME“ – stabilný grid (PC 3, mobil 1) =====
+   Cieli presne na: <h2 id="sluzby"> ... </h2><div class="grid">…karty…</div> */
 h2#sluzby + .grid{
   display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap:18px;
-}
-
-/* Mobil: vždy 1 stĺpec */
-@media (max-width:900px){
-  h2#sluzby + .grid{
-    grid-template-columns: 1fr !important;
-  }
-  h2#sluzby + .grid > *{
-    grid-column: 1 / -1 !important;
-  }
-  .card h3{ font-size:1.15rem; word-break:break-word; }
-}
-/* --- Fix: sekcia Čo robíme – stabilný grid a karty --- */
-h2#sluzby + .grid{
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns:repeat(3, minmax(0,1fr)); /* minmax(0,1fr) + min-width:0 fixne lámanie */
   gap:22px;
-  align-items: stretch;
+  align-items:stretch;
 }
+h2#sluzby + .grid > *{ min-width:0; }
 
-h2#sluzby + .grid > *{
-  min-width: 0;           /* umožní textu normálne sa zalomiť */
-}
-
-/* Karty nech sa neskracujú do „…“ a netlačia obsah von */
-.card{
-  overflow: visible;
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.card h3, .card p{
-  white-space: normal;
-  word-break: normal;
-  overflow-wrap: anywhere;
-}
-
-/* Mobil = 1 stĺpec vždy */
 @media (max-width:900px){
-  h2#sluzby + .grid{
-    grid-template-columns: 1fr !important;
-  }
-  h2#sluzby + .grid > *{
-    grid-column: 1 / -1 !important;
-  }
+  h2#sluzby + .grid{ grid-template-columns:1fr; }
 }
+
+h2#sluzby + .grid .card h3,
+h2#sluzby + .grid .card p{
+  white-space:normal; overflow-wrap:anywhere; word-break:normal;
+}
+
+/* Prevencia horizontálneho scrollu */
+html,body{ overflow-x:hidden; }
