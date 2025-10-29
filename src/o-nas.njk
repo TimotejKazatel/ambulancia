@@ -46,36 +46,72 @@ eleventyNavigation:
     </aside>
   </section>
 
-  <!-- Služby v skratke -->
-<section class="card card--full">
+ <section class="card card--full">
   <h2 id="sluzby">Čo robíme</h2>
-  <div class="grid" role="list">
-    <div class="card" role="listitem">
+
+  <div class="services">
+    <!-- veľká karta (mení sa podľa kliknutej položky) -->
+    <article class="services-main card" id="serviceDetail">
       <h3>Preventívna starostlivosť</h3>
       <p>Prehliadky, skríningy a očkovania podľa aktuálnych odporúčaní.</p>
-    </div>
+    </article>
 
-    <div class="card" role="listitem">
-      <h3>Diagnostika</h3>
-      <p>EKG, USG [ak máte], odbery a spolupráca s akreditovanými laboratóriami.</p>
-    </div>
+    <!-- malé karty (prepínajú obsah veľkej) -->
+    <div class="services-list" role="list">
+      <button class="s-item card is-active" role="listitem"
+              data-title="Preventívna starostlivosť"
+              data-text="Prehliadky, skríningy a očkovania podľa aktuálnych odporúčaní.">
+        Preventívna starostlivosť
+      </button>
 
-    <div class="card" role="listitem">
-      <h3>Liečba & sledovanie</h3>
-      <p>Individuálne liečebné plány a bezpečné predpisovanie liekov.</p>
-    </div>
+      <button class="s-item card" role="listitem"
+              data-title="Diagnostika"
+              data-text="EKG, USG [ak máte], odbery a spolupráca s akreditovanými laboratóriami.">
+        Diagnostika
+      </button>
 
-    <div class="card" role="listitem">
-      <h3>Preventívna starostlivosť</h3>
-      <p>Prehliadky, skríningy a očkovania podľa aktuálnych odporúčaní.</p>
-    </div>
+      <button class="s-item card" role="listitem"
+              data-title="Liečba & sledovanie"
+              data-text="Individuálne liečebné plány a bezpečné predpisovanie liekov.">
+        Liečba & sledovanie
+      </button>
 
-    <div class="card" role="listitem">
-      <h3>Preventívna starostlivosť</h3>
-      <p>Prehliadky, skríningy a očkovania podľa aktuálnych odporúčaní.</p>
+      <button class="s-item card" role="listitem"
+              data-title="Poradenstvo"
+              data-text="Preventívne a nutričné konzultácie, interpretácia výsledkov.">
+        Poradenstvo
+      </button>
+
+      <button class="s-item card" role="listitem"
+              data-title="Očkovanie"
+              data-text="Povinné aj odporúčané vakcíny, kontrola očkovacieho kalendára.">
+        Očkovanie
+      </button>
     </div>
   </div>
 </section>
+
+<script>
+  // prepínanie obsahu veľkej karty
+  (function(){
+    const detail = document.getElementById('serviceDetail');
+    const items = document.querySelectorAll('.s-item');
+    items.forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        items.forEach(b=>b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        const title = btn.getAttribute('data-title');
+        const text  = btn.getAttribute('data-text');
+        detail.innerHTML = `<h3>${title}</h3><p>${text}</p>`;
+        // posun na veľkú kartu na mobile
+        if (window.matchMedia('(max-width:900px)').matches) {
+          detail.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    });
+  })();
+</script>
+
 
   <!-- Tím -->
   <section class="card card--full">
