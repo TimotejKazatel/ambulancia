@@ -109,3 +109,42 @@ h2#sluzby + .grid .card p{
 
 /* Prevencia horizontálneho scrollu */
 html,body{ overflow-x:hidden; }
+
+/* --- Services (veľká karta + malé položky) --- */
+.services{
+  display:grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap:22px;
+  align-items:start;
+}
+.services-main{
+  min-height: 220px;
+}
+.services-list{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap:12px;
+}
+.s-item{
+  text-align:left;
+  cursor:pointer;
+  transition: transform .08s ease, box-shadow .08s ease, border-color .08s ease;
+}
+.s-item:is(:hover,:focus){ transform: translateY(-1px); }
+.s-item.is-active{ border-color: var(--accent); box-shadow: 0 8px 24px rgba(59,130,246,.12); }
+
+/* typografia vo veľkej karte */
+.services-main h3{ margin:0 0 .4rem; font-size: clamp(1.3rem, 2.2vw, 1.6rem); }
+.services-main p{ margin:0; color:#4b5563; }
+
+/* responsivita: mobil = veľká karta hore, malé pod ňou na 2 stĺpce, úplne úzky 1 stĺpec */
+@media (max-width:900px){
+  .services{ grid-template-columns: 1fr; }
+  .services-list{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+@media (max-width:520px){
+  .services-list{ grid-template-columns: 1fr; }
+}
+
+/* zabrániť horizontálnemu scrollu */
+html,body{ overflow-x:hidden; }
