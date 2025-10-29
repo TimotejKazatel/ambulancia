@@ -140,3 +140,35 @@ h1,h2,h3,p{ hyphens: auto; overflow-wrap: anywhere; }
 
 /* Obrázok v hero nech sa nepokúša o pevné rozmery */
 .hero .media img{ height: auto; }
+
+/* --- MOBIL FIX: hero a CTA --- */
+@media (max-width: 900px){
+  .hero-wrap{ display:grid; grid-template-columns: 1fr !important; gap:16px; }
+  .hero h1{ font-size: 1.9rem !important; line-height:1.15 !important; }
+  .hero p.lead{ font-size: 1rem !important; }
+  .hero .cta{ display:flex; flex-direction: column !important; gap:10px; }
+  .hero .cta .btn{ width:100% !important; text-align:center; }
+}
+
+/* --- MOBIL FIX: sekcia „Čo robíme“ = 1 stĺpec --- */
+@media (max-width: 900px){
+  .grid[role="list"]{
+    display:grid !important;
+    grid-template-columns: 1fr !important;
+    grid-auto-flow: row !important;
+  }
+  .grid[role="list"] > *{
+    grid-column: 1 / -1 !important;   /* prebijeme inline style="grid-column: span 4" */
+  }
+  .card h3{ font-size: 1.15rem !important; line-height:1.25; word-break: break-word; }
+}
+
+/* lepšie zalamovanie textu na úzkych tel. */
+h1,h2,h3,p{ hyphens:auto; overflow-wrap:anywhere; }
+
+/* --- MENU FIX: aby bolo klikateľné nad obsahom --- */
+header{ position: sticky; top:0; z-index:1000; }
+nav#siteNav{ z-index:1100; }
+@media (max-width:900px){
+  nav#siteNav{ position: fixed; right:16px; top:64px; }
+}
