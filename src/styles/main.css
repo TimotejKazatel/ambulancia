@@ -148,3 +148,33 @@ html,body{ overflow-x:hidden; }
 
 /* zabrániť horizontálnemu scrollu */
 html,body{ overflow-x:hidden; }
+
+/* --- FIX: mobilné menu nad hero sekciou --- */
+header {
+  position: relative;
+  z-index: 50;
+}
+
+nav#siteNav {
+  position: absolute;
+  right: 16px;
+  top: 64px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+  padding: 10px;
+  width: min(88vw, 340px);
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 1000; /* menu vždy nad všetkým */
+}
+
+@media (max-width:900px) {
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100; /* aby menu bolo stále nad hero */
+  }
+}
