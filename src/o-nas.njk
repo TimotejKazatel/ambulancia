@@ -1,5 +1,192 @@
 ---
 layout: layout.njk
 title: O nás
+eleventyNavigation:
+  key: O nás
+  order: 2
 ---
-<section><div class="container"><h2>MUDr. Nováková a tím</h2><p>Krátke predstavenie filozofie ambulancie.</p></div></section>
+
+<header class="hero o-nas-hero">
+  <div class="container">
+    <nav class="breadcrumbs"><a href="/">Domov</a> / O nás</nav>
+    <div class="hero-wrap">
+      <div>
+        <span class="pill">Ambulancia [Špecializácia] • Od roku 20XX</span>
+        <h1>O nás – [Názov ambulancie]</h1>
+        <p class="lead">Poskytujeme modernú, dostupnú a empatickú zdravotnú starostlivosť pre dospelých aj deti. Kombinujeme skúsenosti, technológiu a ľudský prístup – s dôrazom na prevenciu a rýchle objednanie.</p>
+        <div class="cta">
+          <a class="btn" href="/kontakt">Objednať termín</a>
+          <a class="btn btn--ghost" href="/sluzby">Naše služby</a>
+        </div>
+      </div>
+      <div class="media">
+        <img src="/assets/img/ambulancia-hero.jpg" alt="Ambulancia [Názov] – recepcia a vyšetrovňa">
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="o-nas" class="container">
+  <!-- Misia + prečo my -->
+  <section class="grid">
+    <article class="card" style="grid-column: span 7;">
+      <h2 id="misia">Naša misia</h2>
+      <p>Byť prvou voľbou pre pacientov, ktorí hľadajú odbornú starostlivosť bez zbytočného stresu. Zameriavame sa na <strong>preventívne prehliadky</strong>, <strong>presnú diagnostiku</strong> a <strong>jasnú komunikáciu</strong>.</p>
+      <ul>
+        <li>Krátke čakacie doby a objednávanie online</li>
+        <li>Jasné vysvetlenie nálezov a liečby</li>
+        <li>Prepojenie s laboratóriami a poisťovňami</li>
+      </ul>
+    </article>
+
+    <aside class="card" style="grid-column: span 5;">
+      <h3>Prečo si vybrať nás</h3>
+      <div class="stat"><strong>4.9/5</strong> hodnotenie pacientov (interné)</div>
+      <div class="stat"><strong>48 hodín</strong> priemerný čas do najbližšieho voľného termínu</div>
+      <div class="stat"><strong>[3]</strong> zmluvné poisťovne: VšZP, Dôvera, Union</div>
+    </aside>
+  </section>
+
+  <!-- Služby v skratke -->
+  <section class="card card--full">
+    <h2 id="sluzby">Čo robíme</h2>
+    <div class="grid" role="list">
+      <div class="card" role="listitem" style="grid-column: span 4;">
+        <h3>Preventívna starostlivosť</h3>
+        <p>Prehliadky, skríningy a očkovania podľa aktuálnych odporúčaní.</p>
+      </div>
+      <div class="card" role="listitem" style="grid-column: span 4;">
+        <h3>Diagnostika</h3>
+        <p>EKG, USG [ak máte], odbery a spolupráca s akreditovanými laboratóriami.</p>
+      </div>
+      <div class="card" role="listitem" style="grid-column: span 4;">
+        <h3>Liečba & sledovanie</h3>
+        <p>Individuálne liečebné plány a bezpečné predpisovanie liekov.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tím -->
+  <section class="card card--full">
+    <h2 id="tim">Náš tím</h2>
+    <div class="team" role="list">
+      <article class="person" role="listitem">
+        <img src="/assets/img/team-lekar.jpg" alt="MUDr. [Meno Priezvisko] – odborný lekár">
+        <div class="info">
+          <h3>MUDr. [Meno Priezvisko]</h3>
+          <div class="role">Odborný lekár, 12+ rokov praxe</div>
+          <p>Špecializácia na [oblasť], člen Slovenskej lekárskej komory. Dôraz na jasnú komunikáciu a prevenciu.</p>
+        </div>
+      </article>
+      <article class="person" role="listitem">
+        <img src="/assets/img/team-sestra.jpg" alt="[Meno Priezvisko] – zdravotná sestra">
+        <div class="info">
+          <h3>[Meno Priezvisko]</h3>
+          <div class="role">Zdravotná sestra</div>
+          <p>Koordinuje objednávanie, odbery a prípravu pacientov na vyšetrenie.</p>
+        </div>
+      </article>
+      <article class="person" role="listitem">
+        <img src="/assets/img/team-koordinator.jpg" alt="[Meno Priezvisko] – koordinátor/ka ambulancie">
+        <div class="info">
+          <h3>[Meno Priezvisko]</h3>
+          <div class="role">Koordinátor/ka ambulancie</div>
+          <p>Starostlivosť o plynulý chod ambulancie a komunikáciu s poisťovňami.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Hodiny + kontakt -->
+  <section class="grid">
+    <article class="card" style="grid-column: span 6;">
+      <h2 id="hodiny">Ordinačné hodiny</h2>
+      <table class="hours">
+        <thead><tr><th>Deň</th><th>Čas</th></tr></thead>
+        <tbody>
+          <tr><td>Pon – Uto</td><td>07:30 – 15:30</td></tr>
+          <tr><td>Str – Štv</td><td>09:00 – 17:00</td></tr>
+          <tr><td>Pia</td><td>07:30 – 13:00</td></tr>
+        </tbody>
+      </table>
+      <p class="note">Posledné objednanie na odbery 30 minút pred koncom ordinačných hodín.</p>
+    </article>
+
+    <aside class="card" style="grid-column: span 6;">
+      <h2 id="kontakt">Kontakt</h2>
+      <p><strong>Adresa:</strong> [Ulica 123, Mesto] • <strong>Telefón:</strong> <a href="tel:+421xxxxxxx">+421 xxx xxx xxx</a> • <strong>Email:</strong> <a href="mailto:info@ambulancia.sk">info@ambulancia.sk</a></p>
+      <div class="cta">
+        <a class="btn" href="/kontakt">Objednať online</a>
+        <a class="btn btn--ghost" href="/kontakt">Navigovať</a>
+      </div>
+    </aside>
+  </section>
+
+  <!-- História / míľniky -->
+  <section class="card card--full">
+    <h2 id="historia">Naša cesta</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <h3>20XX – Založenie ambulancie</h3>
+        <p class="note">Otvorenie v lokalite [Mesto], zameranie na primárnu starostlivosť.</p>
+      </div>
+      <div class="tl-item">
+        <h3>20XX – Nové prístroje</h3>
+        <p class="note">Rozšírenie diagnostiky: EKG, USG [ak máte].</p>
+      </div>
+      <div class="tl-item">
+        <h3>20XX – Online objednávanie</h3>
+        <p class="note">Zavedenie elektronického objednávania a SMS pripomienok.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Poisťovne + prístupnosť -->
+  <section class="grid">
+    <article class="card" style="grid-column: span 7;">
+      <h2 id="poistovne">Zmluvné poisťovne & certifikáty</h2>
+      <p class="note">Sme zmluvným partnerom poisťovní <strong>VšZP</strong>, <strong>Dôvera</strong> a <strong>Union</strong>. Certifikáty: ISO 9001 [ak máte].</p>
+      <p class="note">Sem vlož logá poisťovní s alt textom kvôli prístupnosti.</p>
+    </article>
+    <aside class="card" style="grid-column: span 5;">
+      <h2>Dostupnosť a prístupnosť</h2>
+      <ul>
+        <li>Bezbariérový vstup a toaleta</li>
+        <li>Možnosť doprovodu</li>
+        <li>Parkovanie v areáli</li>
+      </ul>
+    </aside>
+  </section>
+
+  <!-- Mapa -->
+  <section class="card card--full">
+    <h2 id="mapa">Kde nás nájdete</h2>
+    <div class="media" style="height: 340px;">
+      <!-- Nahraď vlastným embedom (Google Maps / OpenStreetMap) -->
+      <img src="/assets/img/mapa-placeholder.jpg" alt="Mapa s umiestnením ambulancie v meste [Mesto]">
+    </div>
+  </section>
+
+  <!-- GDPR -->
+  <section class="card card--full">
+    <h2 id="gdpr">Ochrana údajov</h2>
+    <p class="note">Spracúvame osobné údaje v súlade s GDPR. Dokument „Zásady spracúvania osobných údajov“ nájdete <a href="/gdpr">tu</a>. Komunikácia webu je zabezpečená šifrovaním (HTTPS).</p>
+  </section>
+</main>
+
+<!-- Štruktúrované dáta -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalClinic",
+  "name": "Ambulancia [Názov]",
+  "medicalSpecialty": "[Špecializácia]",
+  "address": {"@type": "PostalAddress","streetAddress": "[Ulica 123]","addressLocality": "[Mesto]","postalCode": "[PSČ]","addressCountry": "SK"},
+  "telephone": "+421 xxx xxx xxx",
+  "email": "info@ambulancia.sk",
+  "openingHours": ["Mo-Tu 07:30-15:30","We-Th 09:00-17:00","Fr 07:30-13:00"],
+  "url": "https://[vas-web].sk/o-nas",
+  "image": ["https://[vas-web].sk/assets/img/ambulancia-hero.jpg"],
+  "acceptsInsurance": ["VšZP","Dôvera","Union"]
+}
+</script>
