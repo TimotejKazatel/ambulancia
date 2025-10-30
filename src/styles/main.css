@@ -180,7 +180,7 @@ nav#siteNav {
 }
 
 body {
-  background-image: url("/assets/flowers-pattern.png");
+  background-image: url("src/assets/1000011664.png");
   background-size: 250px 250px;     /* rozmery opakovania vzoru */
   background-repeat: repeat;        /* nech sa opakuje */
   background-attachment: scroll;    /* umožní jemný pohyb */
