@@ -3,6 +3,8 @@ module.exports = function(eleventyConfig) {
   // statické súbory
   eleventyConfig.addPassthroughCopy({ "src/media": "media" });
   eleventyConfig.addPassthroughCopy("admin");
+  eleventyConfig.addPassthroughCopy("src/assets");
+
 
   eleventyConfig.addGlobalData("products", () => require("./src/data/products.json"));
 
