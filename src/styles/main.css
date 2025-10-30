@@ -180,10 +180,18 @@ nav#siteNav {
 }
 
 body {
-  background-image: url("/assets/.1000011664.png");
-  background-size: cover;         /* alebo contain, ak nechceš roztiahnuť */
-  background-position: center;    /* nech je pekne v strede */
-  background-repeat: no-repeat;   /* aby sa neopakoval */
-  background-attachment: fixed;   /* nech sa nehýbe pri scrollovaní */
+  background-image: url("/assets/flowers-pattern.png");
+  background-size: 250px 250px;     /* rozmery opakovania vzoru */
+  background-repeat: repeat;        /* nech sa opakuje */
+  background-attachment: scroll;    /* umožní jemný pohyb */
+  background-position: 0 0;
+  animation: moveBackground 60s linear infinite; /* animácia pomalého pohybu */
 }
+
+/* animácia pohybu pozadia */
+@keyframes moveBackground {
+  from { background-position: 0 0; }
+  to { background-position: 500px 500px; }
+}
+
 
